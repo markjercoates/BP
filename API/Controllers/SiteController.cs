@@ -16,10 +16,10 @@ namespace API.Controllers
             _siteRepository = siteRepository;
         }
 
-        [HttpGet("{search}")]
-        public ActionResult<List<SiteDto>> GetSites(string search)
+        [HttpGet()]
+        public async Task<ActionResult<List<SiteDto>>> GetSites(string search)
         {
-            var results = _siteRepository.GetSites(search);
+            var results = await _siteRepository.GetSites(search);
 
             if (results == null) return NotFound();
 
