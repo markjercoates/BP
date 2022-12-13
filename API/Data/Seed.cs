@@ -9,7 +9,7 @@ namespace API.Data
     {
         public static async Task SeedData(DataContext context)
         {
-            if (context.Sites.Any()) return;
+            //if (context.Sites.Any()) return;
 
             var sites = new List<Site>
             {
